@@ -8,6 +8,6 @@
     html: '<div id="basic-demo" ></div>',
     js: './basic.demo.js',
     source: './Basic.js',
-    open: true
+    open: false
 }
 ````
