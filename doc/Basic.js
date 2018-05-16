@@ -7,7 +7,7 @@ class Basic extends React.Component {
         super(props)
         this.state = {
             photos: [
-                'https://picsum.photos/100/1001'
+                'https://picsum.photos/100/1111'
             ]
         }
     }

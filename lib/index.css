@@ -20,3 +20,14 @@
     bottom:100%;left:0;
     width: 100%;
 }
+.@{prefix}--disable {
+    .@{prefix}-content-pullUp-loading,
+    .@{prefix}-content-pullUp-releaseTip,
+    .@{prefix}-content-pullUp-tip ,
+    .@{prefix}-content-pullDown-empty,
+    .@{prefix}-content-pullDown-loading,
+    .@{prefix}-content-pullDown-releaseTip,
+    .@{prefix}-content-pullDown-tip {
+        display: none;
+    }
+}
