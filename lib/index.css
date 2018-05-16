@@ -5,12 +5,18 @@
 .@{prefix}-content {
     position: relative;
 }
+.@{prefix}-content-pullUp-loading,
+.@{prefix}-content-pullUp-releaseTip,
+.@{prefix}-content-pullUp-tip {
+    position: absolute;
+    top:100%;left:0;
+    width: 100%;
+}
 .@{prefix}-content-pullDown-empty,
 .@{prefix}-content-pullDown-loading,
 .@{prefix}-content-pullDown-releaseTip,
 .@{prefix}-content-pullDown-tip {
     position: absolute;
-    top:0;left:0;
+    bottom:100%;left:0;
     width: 100%;
-    transform: translate(0px ,-100%);
 }

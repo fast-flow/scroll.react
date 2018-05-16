@@ -39,6 +39,28 @@ class Basic extends React.Component {
                     pullDownTip={( <div>下拉刷新</div> )}
                     pullDownReleaseTip={(<div>松开更新</div>)}
                     pullDownLoading={(<div>加载中...</div>)}
+
+                    pullUpFetch={(resolve) => {
+                        setTimeout(function () {
+                            if (self.state.photos.length < 3) {
+                                let random = (parseInt(Math.random()*100) + 100)
+                                self.setState({
+                                    photos: self.state.photos.concat([`https://picsum.photos/${random}/${random}`])
+                                })
+                                resolve()
+                            }
+                            else {
+                                resolve({type: 'empty'})
+                            }
+
+                        }, 500)
+                    }}
+                    pullUpDistance={20}
+                    pullUpTip={( <div>上拉刷新</div> )}
+                    pullUpReleaseTip={(<div>松开更新</div>)}
+                    pullUpLoading={(<div>加载中...</div>)}
+                    pullUpEmpty={(<div>没有更多了</div>)}
+
                     style={{
                         height: '20em',
                         border: '1px solid blue'
@@ -46,7 +68,8 @@ class Basic extends React.Component {
                 >
                     {
                         self.state.photos.map(function (item, key) {
-                            return <img src={item} key={key} style={{display: 'block'}} alt=""/>
+                            let size = item.split('/').slice(-2)
+                            return <img width={size[0]} height={size[1]} src={item} key={key} style={{display: 'block'}} alt=""/>
                         })
                     }
                 </Scroll>
